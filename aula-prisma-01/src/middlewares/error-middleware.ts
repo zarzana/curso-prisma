@@ -9,6 +9,8 @@ export function handleApplicationErrors(
   _req: Request,
   res: Response
 ) {
+
+  console.log(err)
   if (err.name === "ConflictError") {
     return res.status(httpStatus.CONFLICT).send({
       message: err.message,
